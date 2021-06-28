@@ -1,0 +1,24 @@
+
+input[type=text]  {
+ font-size: 20px;
+ display: inline-block;
+ border: solid 2px transparent;
+ background-color: rgba($colour-2, 0.1);
+ border-radius: 2px;
+ color:black;
+ 
+}
+
+input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.option {
+  color:black;
+  background-color: #fff;
+  padding: 5px;
+  border: solid 2px gainsboro;
+  border-top: none;
+  border-radius: 1px;
+  cursor: pointer;
+}

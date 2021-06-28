@@ -1,8 +1,9 @@
-import {GET_USERS, SET_ERROR, SET_LOADING} from '../types';
+import {GET_USERS, SET_ERROR} from '../types';
 
 export const getUsers = (input, userList) => {
   return (dispatch) => {
-    if (input) {
+
+    if (input && userList) {
       const filteredUserList = userList.filter((user) =>
         user.username !== input
           ? user.username.toUpperCase().startsWith(input.toUpperCase())
@@ -33,39 +34,24 @@ export const getUsers = (input, userList) => {
       if (!filteredUserList.length) {
         dispatch({
           type: GET_USERS,
-          payload: ''
+          payload: '',
         });
         dispatch({
           type: SET_ERROR,
-          payload: 'Nie ma takiego usera',
+          payload: 'Could not find user',
         });
       }
-
-      
-
-      }
-      else {
+      if (!userList && !input) {
         dispatch({
           type: GET_USERS,
-          payload: ''
+          payload: '',
         });
         dispatch({
           type: SET_ERROR,
-          payload: 'Wpisz nazwe usera',
+          payload: 'Please enter username',
         });
+      }
+
     }
-  };
-};
-
-export const setLoading = () => {
-  return {
-    type: SET_LOADING,
-  };
-};
-
-export const setError = () => {
-  return {
-    type: SET_ERROR,
-    payload: '',
   };
 };

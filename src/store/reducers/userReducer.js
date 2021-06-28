@@ -5,7 +5,7 @@ import {
 
 const initialState = {
   data: null,
-  error: '',
+  error: 'Please enter username',
 };
 
 export default (state = initialState, action) => {
@@ -13,14 +13,12 @@ export default (state = initialState, action) => {
     case GET_USERS:
       return {
         data: action.payload,
-        loading: false,
         error: '',
       };
     case SET_ERROR:
       return {
         ...state,
         error: action.payload,
-        loading: false,
       };
     default:
       return state

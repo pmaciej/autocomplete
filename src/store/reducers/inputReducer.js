@@ -13,14 +13,12 @@ export default (state = initialState, action) => {
     case SAVE_INPUT:
       return {
         data: action.payload,
-        loading: false,
         error: '',
       };
     case SET_ERROR:
       return {
         ...state,
         error: action.payload,
-        loading: false,
       };
     default:
       return state

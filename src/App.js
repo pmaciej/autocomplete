@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {getData} from './store/actions/fetchActions.js'
+import {getData} from './store/actions/userListActions.js'
 import UserSearch from './components/userSearch';
 import DisplayUser from './components/displayUser.js';
 import './App.css'

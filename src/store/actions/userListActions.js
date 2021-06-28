@@ -3,12 +3,11 @@ import axios from 'axios';
 import {
   FETCH_DATA,
   SET_ERROR,
-  SET_LOADING,
 } from '../types';
 
 
 
-export const getData = (input) => {
+export const getData = () => {
   return async (dispatch) => {
     try {
       const url = `https://jsonplaceholder.typicode.com/users`;
@@ -27,21 +26,9 @@ export const getData = (input) => {
     } catch (err) {
       dispatch({
         type: SET_ERROR,
-        payload: 'Could not find user',
+        payload: 'Connection error',
       });
     }
   };
 };
 
-export const setLoading = () => {
-  return {
-    type: SET_LOADING,
-  };
-};
-
-export const setError = () => {
-  return {
-    type: SET_ERROR,
-    payload: '',
-  };
-};

@@ -1,4 +1,4 @@
-import {SAVE_INPUT, SET_ERROR, SET_LOADING} from '../types';
+import {SAVE_INPUT} from '../types';
 
 export const saveInput = (input) => {
   return (dispatch) => {
@@ -16,15 +16,3 @@ export const saveInput = (input) => {
   };
 };
 
-export const setLoading = () => {
-  return {
-    type: SET_LOADING,
-  };
-};
-
-export const setError = () => {
-  return {
-    type: SET_ERROR,
-    payload: '',
-  };
-};
